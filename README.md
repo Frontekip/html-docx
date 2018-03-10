@@ -1,6 +1,10 @@
 # html-to-docx-server
 Python html to docx for tornado
 
+### Pre Requirements
+    apt-get install pandoc ### Linux
+    brew install pandoc    ### Macos
+    
 
 ### Install and Run
     pip install -r requirements.txt
