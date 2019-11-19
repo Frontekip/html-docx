@@ -10,6 +10,28 @@ It makes docx html content with pandoc. Set up simple with the docker if you lik
     
 `POST` the file **name** and **html** content here: http://localhost:5000
 
+example:
+
+```JS
+
+// POST DATA http://localhost:5000
+{
+  "name": "file example",
+  "html": "<b>hello</b><i>hello</i>"
+}
+
+// RESULT
+
+{
+  "status": "success",
+  "data": {
+    "url": "http://localhost:5000/docs/file-example.docx"
+  }
+}
+```
+
+
+
 ### Using Docker
     
 Pull docker image:
