@@ -39,4 +39,12 @@ Pull docker image:
 and run:
 
     docker run -e ROOT_URL=https://domain.com -d -p 5000:5000 icerikevreni/html-docx
-    
+
+
+### Variables
+
+you can use some env variables.
+
+`PORT`=**5000**
+
+`ROOT_URL`=**http://localhost:5000**
