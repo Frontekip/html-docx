@@ -48,3 +48,7 @@ you can use some env variables.
 `PORT`=**5000**
 
 `ROOT_URL`=**http://localhost:5000**
+
+You can change it by using the **-e** parameter.
+
+    -e ROOT_URL=http://domain.com -e PORT=3000
