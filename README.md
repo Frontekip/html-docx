@@ -10,8 +10,6 @@ It makes docx html content with pandoc. Set up simple with the docker if you lik
     
 `POST` the file **name** and **html** content here: http://localhost:5000
 
-example:
-
 ```JS
 
 // POST DATA http://localhost:5000
