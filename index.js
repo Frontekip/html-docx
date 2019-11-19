@@ -14,18 +14,25 @@ app.use(bodyParser.json());
 app.use('/docs', express.static(path.join(__dirname, 'docs')))
 
 // envs default port 3000
-const { PORT = 3000, ROOT_URL = 'http://127.0.0.1:3000' } = process.env;
+const { PORT = 5000, ROOT_URL = 'http://127.0.0.1:5000' } = process.env;
+
+const _getName = (name) => {
+  return `${slugify(name)}.docx`;
+}
 
 const _absoluteUrl = (url) => {
   return `${ROOT_URL}/${url}`;
 }
 
 const _panCommands = (name) => {
-  const file = `${slugify(name)}.docx`;
-  return `-f html -t docx -o ./docs/${file}`;
+  return `-f html -t docx -o ./docs/${_getName(name)}`;
 }
 
-app.post('/', function (req, res) {
+app.get('/', (req, res) => {
+  return res.send('welcome html-docx')
+});
+
+app.post('/', (req, res) => {
   const { name, html } = req.body;
   
   if (name && html) {
@@ -42,7 +49,7 @@ app.post('/', function (req, res) {
       res.json({
         status: 'success',
         data: {
-          url: _absoluteUrl(`docs/${file}`)
+          url: _absoluteUrl(`docs/${_getName(name)}`)
         }
       })
     });

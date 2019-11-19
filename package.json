@@ -2,8 +2,12 @@
   "name": "docx",
   "version": "0.0.1",
   "description": "Html to docx",
-  "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "start": "node index.js",
+    "docker:build": "docker build -t icerikevreni/html-docx:latest .",
+    "docker:run": "docker run -e ROOT_URL=https://www.domain.com -d -p 5000:5000 icerikevreni/html-docx"
+  },
   "dependencies": {
     "body-parse": "^0.1.0",
     "express": "^4.17.1",
