@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "docker:build": "docker build -t icerikevreni/html-docx:latest .",
+    "docker:push": "docker push icerikevreni/html-docx:latest",
     "docker:run": "docker run -e ROOT_URL=https://www.domain.com -d -p 5000:5000 icerikevreni/html-docx"
   },
   "dependencies": {
