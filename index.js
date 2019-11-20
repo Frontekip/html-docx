@@ -3,9 +3,13 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const pandoc = require('node-pandoc');
 const slugify = require('slugify');
+const cors = require('cors');
 
 // app
 const app = express();
+
+// Cors add
+app.use(cors());
 
 // middle
 app.use(bodyParser.json());
@@ -36,8 +40,9 @@ app.post('/', (req, res) => {
   const { name, html } = req.body;
   
   if (name && html) {
-    return pandoc(html, _panCommands(name), (err) => {
+    pandoc(html, _panCommands(name), (err) => {
       if (err) {
+        console.log(err);
         return res.json({
           status: 'error',
           data: {
@@ -54,13 +59,6 @@ app.post('/', (req, res) => {
       })
     });
   }
-
-  return res.json({
-    status: 'error',
-    data: {
-      message: 'name and html fields required!'
-    }
-  });
 });
 
 app.listen(PORT)
