@@ -5,7 +5,7 @@ import pypandoc
 import tornado.ioloop
 import tornado.web
 
-STATIC_PATH = os.path.join(os.path.dirname(__file__), 'docs')
+STATIC_PATH = os.path.join(os.path.dirname(__file__), 'static')
 
 class MainHandler(tornado.web.RequestHandler):
     def set_default_headers(self):
