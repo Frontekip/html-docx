@@ -12,7 +12,7 @@ class MainHandler(tornado.web.RequestHandler):
         self.set_header("access-control-allow-origin", "*")
         self.set_header("Access-Control-Allow-Headers", "x-requested-with")
         self.set_header('Access-Control-Allow-Methods', 'GET, PUT, DELETE, OPTIONS')
-        self.set_header("Access-Control-Allow-Headers", "access-control-allow-origin,authorization,content-type") 
+        self.set_header("Access-Control-Allow-Headers", "access-control-allow-origin,authorization,content-type")
 
     def options(self):
         # no body
@@ -31,7 +31,7 @@ class MainHandler(tornado.web.RequestHandler):
         data = tornado.escape.json_decode(self.request.body)
         html = data.get('html')
         name = data.get('name')
-        file = "./docs/%s.docx" %name
+        file = "./static/%s.docx" %name
 
         ## oluştur.
         pypandoc.convert(html, format='html', to='docx', outputfile=file, encoding='utf8', extra_args=["-M2GB", "+RTS", "-K64m", "-RTS"])
@@ -53,5 +53,5 @@ def make_app():
 
 if __name__ == "__main__":
     app = make_app()
-    app.listen(5000)
+    app.listen(6000)
     tornado.ioloop.IOLoop.current().start()
