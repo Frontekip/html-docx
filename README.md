@@ -23,7 +23,7 @@ It makes docx html content with pandoc. Set up simple with the docker if you lik
 {
   "status": "success",
   "data": {
-    "url": "http://localhost:5000/docs/file-example.docx"
+    "url": "http://localhost:6000/docs/file-example.docx"
   }
 }
 ```
@@ -38,17 +38,17 @@ Pull docker image:
 
 and run:
 
-    docker run -e ROOT_URL=https://domain.com -d -p 5000:5000 icerikevreni/html-docx
+    docker run -e ROOT_URL=https://domain.com -d -p 6000:6000 icerikevreni/html-docx
 
 
 ### Variables
 
 you can use some env variables.
 
-`PORT`=**5000**
+`PORT`=**6000**
 
-`ROOT_URL`=**http://localhost:5000**
+`ROOT_URL`=**http://localhost:6000**
 
 You can change it by using the **-e** parameter.
 
-    -e ROOT_URL=http://domain.com -e PORT=3000
+    -e ROOT_URL=http://domain.com -e PORT=6000
