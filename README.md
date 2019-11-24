@@ -5,8 +5,8 @@ It makes docx html content with pandoc. Set up simple with the docker if you lik
 
     git clone https://github.com/yasaricli/html-docx.git
     cd html-docx
-    npm install
-    npm start
+    pip install -r requirements.txt
+    python main.py
     
 `POST` the file **name** and **html** content here: http://localhost:5000
 
