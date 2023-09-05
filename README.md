@@ -8,11 +8,11 @@ It makes docx html content with pandoc. Set up simple with the docker if you lik
     pip install -r requirements.txt
     python main.py
     
-`POST` the file **name** and **html** content here: http://localhost:5000
+`POST` the file **name** and **html** content here: http://localhost:6000
 
 ```JS
 
-// POST DATA http://localhost:5000
+// POST DATA http://localhost:6000
 {
   "name": "file example",
   "html": "<b>hello</b><i>hello</i>"
@@ -45,10 +45,8 @@ and run:
 
 you can use some env variables.
 
-`PORT`=**6000**
-
 `ROOT_URL`=**http://localhost:6000**
 
 You can change it by using the **-e** parameter.
 
-    -e ROOT_URL=http://domain.com -e PORT=6000
+    -e ROOT_URL=http://domain.com
