@@ -34,11 +34,11 @@ It makes docx html content with pandoc. Set up simple with the docker if you lik
     
 Pull docker image:
 
-    docker pull icerikevreni/html-docx
+    docker pull yasaricli/html-docx
 
 and run:
 
-    docker run -e ROOT_URL=https://domain.com -d -p 6000:6000 icerikevreni/html-docx
+    docker run -e ROOT_URL=https://domain.com -d -p 6000:6000 yasaricli/html-docx
 
 
 ### Variables
