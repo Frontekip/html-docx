@@ -4,7 +4,6 @@ const express = require("express");
 const cors = require("cors");
 
 const { ROOT_URL } = process.env;
-
 const app = express();
 
 app.use(cors());
@@ -18,7 +17,7 @@ app.get("/", async (req, res) => {
   res.status(200).send({
     status: "success",
     data: {
-      message: "Please html",
+      message: "Please POST html and name",
     },
   });
 });
@@ -43,7 +42,7 @@ app.post("/", async (req, res) => {
       res.status(500).send({
         status: "error",
         data: {
-          message: "Bir hata oluştu!",
+          message: "An error occurred, please try again.",
         },
       });
     } else {
@@ -57,7 +56,6 @@ app.post("/", async (req, res) => {
   });
 });
 
-// Serveri dinle
 app.listen(3000, () => {
   console.log(`Running :3000 port`);
 });
