@@ -5,14 +5,14 @@ It makes docx html content with pandoc. Set up simple with the docker if you lik
 
     git clone https://github.com/yasaricli/html-docx.git
     cd html-docx
-    pip install -r requirements.txt
-    python main.py
+    npm install
+    node main.js
     
-`POST` the file **name** and **html** content here: http://localhost:6000
+`POST` the file **name** and **html** content here: http://localhost:3000
 
 ```JS
 
-// POST DATA http://localhost:6000
+// POST DATA http://localhost:3000
 {
   "name": "file example",
   "html": "<b>hello</b><i>hello</i>"
@@ -23,12 +23,10 @@ It makes docx html content with pandoc. Set up simple with the docker if you lik
 {
   "status": "success",
   "data": {
-    "url": "http://localhost:6000/docs/file-example.docx"
+    "url": "http://localhost:3000/docs/file-example.docx"
   }
 }
 ```
-
-
 
 ### Using Docker
     
@@ -38,14 +36,14 @@ Pull docker image:
 
 and run:
 
-    docker run -e ROOT_URL=https://domain.com -d -p 6000:6000 yasaricli/html-docx
+    docker run -e ROOT_URL=https://domain.com -d -p 6000:3000 yasaricli/html-docx
 
 
 ### Variables
 
 you can use some env variables.
 
-`ROOT_URL`=**http://localhost:6000**
+`ROOT_URL`=**http://localhost:3000**
 
 You can change it by using the **-e** parameter.
 
