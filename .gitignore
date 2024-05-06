@@ -1,1 +1,2 @@
-static/*.docx
+node_modules
+public

@@ -1,16 +1,13 @@
-FROM python:2
-
-RUN apt-get update
-RUN apt-get install pandoc -y
+FROM --platform=linux/amd64 node:16.20.2
 
 ## cd and move directory
 WORKDIR /app
 COPY . .
 
-RUN pip install -r requirements.txt
+RUN npm install
 
-## expose 5000 port
-EXPOSE 6000
+## expose 6000 port
+EXPOSE 3000
 
 ## start 
-CMD [ "python", "main.py" ]
+CMD [ "node", "main.js" ]
